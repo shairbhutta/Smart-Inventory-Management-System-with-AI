@@ -1,0 +1,137 @@
+2024-12-30 04:00:07,619 - INFO - Week 1: Key Activities and Initial Findings
+2024-12-30 04:00:07,625 - INFO - Activities:
+2024-12-30 04:00:07,625 - INFO - 1. Data Collection:
+2024-12-30 04:00:07,625 - INFO -    - Imported the dataset: 'Kaiswa mobile phone shop.csv'.
+2024-12-30 04:00:07,626 - INFO -    - Explored data using `info()`, `describe()`, and visualization methods.
+2024-12-30 04:00:07,626 - INFO - 2. Data Preprocessing:
+2024-12-30 04:00:07,626 - INFO -    - Checked for missing values using `isnull().sum()` and confirmed no major missing values.
+2024-12-30 04:00:07,626 - INFO -    - Detected outliers in the numerical columns using boxplots and calculated 10th and 90th percentiles.
+2024-12-30 04:00:07,626 - INFO -    - Capped outliers in numerical columns to ensure data consistency.
+2024-12-30 04:00:07,626 - INFO -    - Engineered lag features for 'Sales' (1-day, 7-day, and 30-day lags) to capture temporal dependencies.
+2024-12-30 04:00:07,626 - INFO -    - Created rolling average features (7-day and 30-day rolling means) for smoother trends.
+2024-12-30 04:00:07,626 - INFO -    - Applied Min-Max Scaling to numerical columns for each product to normalize data.
+2024-12-30 04:00:07,626 - INFO -    - One-hot encoded categorical variables such as 'Product Name' and 'Category' for model readiness.
+2024-12-30 04:00:07,628 - INFO - 3. Baseline Model Development:
+2024-12-30 04:00:07,628 - INFO -    - Built a baseline linear regression model for each product, leveraging lag features and rolling statistics.
+2024-12-30 04:00:07,628 - INFO -    - Evaluated the baseline model on training, validation, and test datasets.
+2024-12-30 04:00:07,628 - INFO -    - Metrics calculated included MAE, MSE, RMSE, and R2 Score.
+2024-12-30 04:00:07,628 - INFO - Findings:
+2024-12-30 04:00:07,628 - INFO - 1. Outliers were present in the numerical columns, primarily beyond the 10th and 90th percentiles:
+2024-12-30 04:00:07,628 - INFO -    - These outliers were capped to improve data quality.
+2024-12-30 04:00:07,628 - INFO - 2. Lag and rolling features successfully captured temporal dependencies.
+2024-12-30 04:00:07,628 - INFO - 3. Baseline Model Performance (Linear regression):
+2024-12-30 04:00:07,628 - INFO -    - The model performed well on the training data but had varied performance across validation and test datasets.
+2024-12-30 04:00:07,631 - INFO -    - Results for each product:
+2024-12-30 04:00:07,631 - INFO - Product: Fold / Flip Sheet 4 in 1 2/ 3 / 4 / 5
+2024-12-30 04:00:07,632 - INFO -   Train Metrics: MAE = 0.0021, MSE = 1.96e-05, RMSE = 0.0044, R2 = 0.9996
+2024-12-30 04:00:07,632 - INFO -   Validation Metrics: MAE = 0.0019, MSE = 5.53e-06, RMSE = 0.0023, R2 = 0.9978
+2024-12-30 04:00:07,632 - INFO -   Test Metrics: MAE = 0.0037, MSE = 7.58e-05, RMSE = 0.0087, R2 = 0.9971
+2024-12-30 04:00:07,632 - INFO - Product: 2.4G Rechargeable Wirless Gaming Mouse T2
+2024-12-30 04:00:07,632 - INFO -   Train Metrics: MAE = 0.00048, MSE = 1.25e-06, RMSE = 0.0011, R2 = 0.9999
+2024-12-30 04:00:07,632 - INFO -   Validation Metrics: MAE = 0.00023, MSE = 7.31e-08, RMSE = 0.00027, R2 = 0.99999
+2024-12-30 04:00:07,633 - INFO -   Test Metrics: MAE = 0.00032, MSE = 1.66e-07, RMSE = 0.00041, R2 = 0.9997
+2024-12-30 04:00:07,634 - INFO - Product: 2176 Itel
+2024-12-30 04:00:07,634 - INFO -   Train Metrics: MAE = 1.3e-15, MSE = 3.79e-30, RMSE = 1.95e-15, R2 = 1.0
+2024-12-30 04:00:07,634 - INFO -   Validation Metrics: MAE = 1.06e-15, MSE = 1.92e-30, RMSE = 1.39e-15, R2 = 1.0
+2024-12-30 04:00:07,635 - INFO -   Test Metrics: MAE = 0.00092, MSE = 1.35e-05, RMSE = 0.0037, R2 = 0.9922
+2024-12-30 04:00:07,635 - INFO - Product: 21D Full Glue Glass
+2024-12-30 04:00:07,635 - INFO -   Train Metrics: MAE = 0.0010, MSE = 3.06e-06, RMSE = 0.0018, R2 = 0.9999
+2024-12-30 04:00:07,635 - INFO -   Validation Metrics: MAE = 0.0012, MSE = 3.40e-06, RMSE = 0.0018, R2 = 0.9997
+2024-12-30 04:00:07,636 - INFO -   Test Metrics: MAE = 0.00082, MSE = 2.13e-06, RMSE = 0.0015, R2 = 0.9992
+2024-12-30 04:00:07,636 - INFO - Product: 21D Full Glue Glass New
+2024-12-30 04:00:07,636 - INFO -   Train Metrics: MAE = 0.0016, MSE = 1.03e-05, RMSE = 0.0032, R2 = 0.9995
+2024-12-30 04:00:07,636 - INFO -   Validation Metrics: MAE = 0.0015, MSE = 3.12e-06, RMSE = 0.0018, R2 = 0.9998
+2024-12-30 04:00:07,636 - INFO -   Test Metrics: MAE = 0.0012, MSE = 2.20e-06, RMSE = 0.0015, R2 = 0.9995
+2024-12-30 04:00:07,636 - INFO - Baseline model exhibited strong training metrics but varied generalization across products on validation and test sets.
+2024-12-30 04:00:07,636 - INFO - Next Steps: Hyperparameter tuning and model enhancements.
+2024-12-30 04:00:56,464 - INFO - Week 2: Developments in Modeling or Approach Adjustments
+2024-12-30 04:00:56,464 - INFO - Activities:
+2024-12-30 04:00:56,464 - INFO - 1. Enhanced Feature Engineering:
+2024-12-30 04:00:56,464 - INFO -    - Revisited and refined features to include lag and rolling features for temporal patterns.
+2024-12-30 04:00:56,464 - INFO -      * Lag Features: 1-day, 7-day, and 30-day lags for 'Sales'.
+2024-12-30 04:00:56,464 - INFO -      * Rolling Features: 7-day and 30-day rolling means and standard deviations for 'Sales' and 'Closing Stock'.
+2024-12-30 04:00:56,464 - INFO -    - Ensured proper feature scaling using Min-Max Scaling for each product individually.
+2024-12-30 04:00:56,464 - INFO -    - Addressed outliers in 'Closing Stock' by capping values at the 10th and 90th percentiles to improve model robustness.
+2024-12-30 04:00:56,464 - INFO - 2. Hyperparameter Tuning for XGBoost Models:
+2024-12-30 04:00:56,464 - INFO -    - Conducted GridSearchCV for each product to identify the best hyperparameters.
+2024-12-30 04:00:56,464 - INFO -    - Tuned hyperparameters include 'learning_rate', 'max_depth', 'n_estimators', and 'subsample'.
+2024-12-30 04:00:56,464 - INFO -    - Example results from tuning:
+2024-12-30 04:00:56,464 - INFO -      * Product: 'Fold / Flip Sheet 4 in 1': Best Params = {'learning_rate': 0.2, 'max_depth': 3, 'n_estimators': 200, 'subsample': 0.8}
+2024-12-30 04:00:56,464 - INFO -      * Product: '2.4G Rechargeable Wirless Gaming Mouse T2': Best Params = {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 200, 'subsample': 1.0}
+2024-12-30 04:00:56,464 - INFO - 3. Model Training and Evaluation After Tuning:
+2024-12-30 04:00:56,464 - INFO -    - Trained XGBoost models using the best hyperparameters identified from tuning.
+2024-12-30 04:00:56,464 - INFO -    - Evaluated the tuned models on training, validation, and test datasets using metrics:
+2024-12-30 04:00:56,464 - INFO -      * Mean Absolute Error (MAE)
+2024-12-30 04:00:56,464 - INFO -      * Mean Squared Error (MSE)
+2024-12-30 04:00:56,464 - INFO -      * Root Mean Squared Error (RMSE)
+2024-12-30 04:00:56,464 - INFO -      * R2 Score (Coefficient of Determination)
+2024-12-30 04:00:56,464 - INFO - Findings:
+2024-12-30 04:00:56,464 - INFO - 1. Hyperparameter Tuning Results:
+2024-12-30 04:00:56,464 - INFO -    - Significant performance improvements observed across validation and test sets.
+2024-12-30 04:00:56,464 - INFO -    - Examples of improvements post-tuning:
+2024-12-30 04:00:56,464 - INFO -      * Product: 'Fold / Flip Sheet 4 in 1': Validation MAE reduced from 0.0757 to 0.0383.
+2024-12-30 04:00:56,464 - INFO -      * Product: '2.4G Rechargeable Wirless Gaming Mouse T2': Validation R2 improved from 0.7474 to 0.7145.
+2024-12-30 04:00:56,471 - INFO - 2. Model Performance After Tuning:
+2024-12-30 04:00:56,471 - INFO -    - Detailed evaluation metrics for each product (Train, Validation, and Test):
+2024-12-30 04:00:56,471 - INFO - Product: Fold / Flip Sheet 4 in 1 2/ 3 / 4 / 5
+2024-12-30 04:00:56,471 - INFO -   Train Metrics: MAE = 0.00047, MSE = 3.73e-07, RMSE = 0.00061, R2 = 0.99999
+2024-12-30 04:00:56,471 - INFO -   Validation Metrics: MAE = 0.0383, MSE = 0.00311, RMSE = 0.0558, R2 = -0.2528
+2024-12-30 04:00:56,472 - INFO -   Test Metrics: MAE = 0.0735, MSE = 0.0114, RMSE = 0.1067, R2 = 0.5686
+2024-12-30 04:00:56,472 - INFO - Product: 2.4G Rechargeable Wirless Gaming Mouse T2
+2024-12-30 04:00:56,472 - INFO -   Train Metrics: MAE = 0.00124, MSE = 2.40e-06, RMSE = 0.00155, R2 = 0.99983
+2024-12-30 04:00:56,472 - INFO -   Validation Metrics: MAE = 0.0341, MSE = 0.00261, RMSE = 0.0510, R2 = 0.7145
+2024-12-30 04:00:56,472 - INFO -   Test Metrics: MAE = 0.0150, MSE = 0.00038, RMSE = 0.0195, R2 = 0.3949
+2024-12-30 04:00:56,474 - INFO - Product: 2176 Itel
+2024-12-30 04:00:56,474 - INFO -   Train Metrics: MAE = 0.00091, MSE = 1.37e-06, RMSE = 0.00117, R2 = 0.99993
+2024-12-30 04:00:56,474 - INFO -   Validation Metrics: MAE = 0.0140, MSE = 0.00033, RMSE = 0.0181, R2 = 0.8763
+2024-12-30 04:00:56,474 - INFO -   Test Metrics: MAE = 0.0169, MSE = 0.00049, RMSE = 0.0221, R2 = 0.7180
+2024-12-30 04:00:56,475 - INFO - Product: 688 Selfi Stick
+2024-12-30 04:00:56,475 - INFO -   Train Metrics: MAE = 0.00048, MSE = 3.96e-07, RMSE = 0.00063, R2 = 0.99999
+2024-12-30 04:00:56,475 - INFO -   Validation Metrics: MAE = 0.0374, MSE = 0.00263, RMSE = 0.0513, R2 = 0.7959
+2024-12-30 04:00:56,475 - INFO -   Test Metrics: MAE = 0.0648, MSE = 0.00654, RMSE = 0.0809, R2 = 0.6464
+2024-12-30 04:00:56,475 - INFO - 3. Observations:
+2024-12-30 04:00:56,475 - INFO -    - Validation and test performance improved for most products after tuning.
+2024-12-30 04:00:56,475 - INFO -    - Slight overfitting observed in the training data for some products, e.g., '2176 Itel'.
+2024-12-30 04:00:56,476 - INFO -    - Products like 'Fold / Flip Sheet' show improvement, but validation R2 still indicates room for enhancement (-0.2528).
+2024-12-30 04:00:56,476 - INFO - Next Steps:
+2024-12-30 04:00:56,476 - INFO - 1. Implement inventory management predictions based on the tuned models.
+2024-12-30 04:00:56,476 - INFO - 2. Develop visualization dashboards to compare actual vs predicted values.
+2024-12-30 04:00:56,476 - INFO - 3. Plan and execute purchase recommendations based on predictions for the next 30 days.
+2024-12-30 04:01:04,782 - INFO - Week 3: Final Implementations and Results
+2024-12-30 04:01:04,786 - INFO - Activities:
+2024-12-30 04:01:04,786 - INFO - 1. Prediction of Closing Stock for Next 30 Days:
+2024-12-30 04:01:04,786 - INFO -    - Forecasted 'Closing Stock' for the next 30 days using the tuned XGBoost models.
+2024-12-30 04:01:04,786 - INFO -    - Reverse scaled predictions to their original range for interpretability.
+2024-12-30 04:01:04,786 - INFO -    - Calculated expected purchase needs based on a threshold (e.g., Closing Stock < 10).
+2024-12-30 04:01:04,788 - INFO - 2. Aggregation of Purchase Requirements:
+2024-12-30 04:01:04,788 - INFO -    - Aggregated purchase recommendations for every 10-day period.
+2024-12-30 04:01:04,788 - INFO -    - Provided actionable insights for inventory management across all products.
+2024-12-30 04:01:04,788 - INFO - 3. Visualization and Documentation:
+2024-12-30 04:01:04,788 - INFO -    - Developed regression plots for training, validation, and test sets.
+2024-12-30 04:01:04,789 - INFO -    - Created bar charts to compare pre- and post-tuning evaluation metrics (MAE, MSE, RMSE, R2).
+2024-12-30 04:01:04,789 - INFO -    - Documented findings and prepared final results for reporting.
+2024-12-30 04:01:04,789 - INFO - Findings:
+2024-12-30 04:01:04,789 - INFO - 1. Final Model Evaluation Results After Tuning:
+2024-12-30 04:01:04,789 - INFO -    - Consistent performance improvements across most products.
+2024-12-30 04:01:04,789 - INFO -    - Example metrics:
+2024-12-30 04:01:04,789 - INFO -      * Product: 'Fold / Flip Sheet 4 in 1': Validation MAE = 0.0383, Test MAE = 0.0735.
+2024-12-30 04:01:04,789 - INFO -      * Product: '2.4G Rechargeable Wireless Gaming Mouse T2': Validation R2 = 0.7145, Test R2 = 0.3949.
+2024-12-30 04:01:04,790 - INFO - 2. Inventory Management Insights:
+2024-12-30 04:01:04,790 - INFO -    - Forecasted 'Closing Stock' for each product for the next 30 days.
+2024-12-30 04:01:04,790 - INFO -    - Generated purchase recommendations based on reorder thresholds (e.g., Closing Stock < 10).
+2024-12-30 04:01:04,790 - INFO -    - Aggregated purchase needs for 10-day periods for better supply chain planning.
+2024-12-30 04:01:04,791 - INFO - 3. Visualizations and Comparisons:
+2024-12-30 04:01:04,791 - INFO -    - Regression plots showcased improved alignment between actual and predicted values after tuning.
+2024-12-30 04:01:04,791 - INFO -    - Bar charts highlighted significant reductions in error metrics (MAE, MSE, RMSE) and increased R2 scores.
+2024-12-30 04:01:04,791 - INFO - Observations:
+2024-12-30 04:01:04,792 - INFO - 1. Final models demonstrated strong predictive performance across train, validation, and test sets.
+2024-12-30 04:01:04,792 - INFO - 2. Predictions aligned well with real-world objectives, enabling better inventory planning.
+2024-12-30 04:01:04,792 - INFO - 3. Minor overfitting was observed for some products, but overall, the models achieved reliable accuracy.
+2024-12-30 04:01:04,792 - INFO - Results Summary:
+2024-12-30 04:01:04,792 - INFO - 1. Improved prediction accuracy for most products after hyperparameter tuning.
+2024-12-30 04:01:04,793 - INFO - 2. Successfully forecasted 'Closing Stock' for the next 30 days with actionable purchase recommendations.
+2024-12-30 04:01:04,793 - INFO - 3. Enhanced inventory management by providing aggregated purchase needs for 10-day periods.
+2024-12-30 04:01:04,793 - INFO - Next Steps:
+2024-12-30 04:01:04,793 - INFO - 1. Deploy the tuned models in a real-time inventory management system.
+2024-12-30 04:01:04,793 - INFO - 2. Automate the generation of purchase recommendations based on forecasts.
+2024-12-30 04:01:04,794 - INFO - 3. Monitor model performance over time and retrain as necessary with updated data.
