@@ -1,17 +1,22 @@
-# Smart Inventory Management System with AI
+
+### Smart Inventory Management System with AI
 
 ## Introduction
 
-Inventory management is a critical aspect of any supply chain. Mismanagement can lead to overstocking, stockouts, and inefficient resource allocation. The **Smart Inventory Management System with AI** addresses these challenges by leveraging machine learning techniques, particularly XGBoost, to predict closing stock levels and provide actionable purchase recommendations. 
+Inventory management is a crucial component of supply chain operations. Poor management can result in overstocking, stockouts, and inefficiencies in resource allocation. The **Smart Inventory Management System with AI** addresses these challenges using advanced machine learning techniques. By integrating **XGBoost** for closing stock forecasting and **ARIMA** for purchase predictions, the system provides actionable recommendations for replenishment and efficient inventory planning.
 
-This project focuses on enhancing decision-making through accurate forecasting, robust data preprocessing, and hyperparameter tuning, ensuring efficient inventory management for businesses.
+This project aims to enhance decision-making by combining accurate forecasting, data preprocessing, and hyperparameter tuning, ensuring seamless inventory management for businesses.
 
 ## Features
 
-- **Stock Forecasting:** Predict closing stock for the next 30 days with high accuracy.
-- **Purchase Recommendations:** Identify products requiring replenishment based on defined thresholds.
-- **Hyperparameter Tuning:** Optimized models for maximum performance.
-- **Data Visualization:** Comprehensive regression plots and bar charts for detailed performance insights.
+- **Integrated Forecasting Models:**
+  - **XGBoost**: Predict closing stock levels for each product.
+  - **ARIMA**: Forecast monthly purchase requirements based on historical trends.
+  - **Combined Approach**: Integrate XGBoost predictions with ARIMA forecasts to calculate aggregated purchases.
+- **Monthly Aggregated Purchase Predictions:** Forecast aggregated purchases for each month of 2025 for all products.
+- **Actionable Recommendations:** Identify products requiring replenishment based on thresholds (e.g., Closing Stock < 10).
+- **Data Visualization:** Detailed regression plots, monthly fluctuation charts, and bar charts for performance comparisons.
+- **Hyperparameter Tuning:** Optimized models for maximum accuracy and robustness.
 
 ## Installation Instructions
 
@@ -53,37 +58,39 @@ Follow these steps to set up the project on your local machine:
 ### Data Preparation
 
 1. Place your dataset in the `data/` directory.
-2. Ensure the dataset contains columns like `Product Name`, `Date`, `Closing Stock`, and relevant features for modeling.
+2. Ensure the dataset contains columns like `Product Name`, `Date`, `Closing Stock`, `Purchases`, and relevant features for modeling.
 3. Run the preprocessing scripts in `notebooks/` to clean and transform the data.
 
 ### Training and Prediction
 
-1. Use the scripts in notebook to:
-   - Train baseline models.
+1. Use the scripts in the `notebooks/` directory to:
+   - Train baseline models (XGBoost for Closing Stock and ARIMA for Purchases).
    - Perform hyperparameter tuning.
    - Evaluate model performance.
-2. For stock predictions:
-   - Run the prediction scripts to forecast closing stock for the next 30 days.
-   - View the actionable insights for inventory management.
+2. For monthly purchase predictions:
+   - Forecast closing stock using XGBoost.
+   - Integrate ARIMA purchase forecasts with XGBoost predictions to compute aggregated purchases.
+   - Generate monthly purchase recommendations for each product.
 
 ### Visualizations
 
 - Explore the `results/` directory for:
-  - Regression plots showcasing model accuracy.
-  - Bar charts comparing baseline and tuned model metrics (e.g., MAE, MSE, R²).
+  - Regression plots comparing actual vs predicted values.
+  - Line charts showcasing monthly fluctuations in aggregated purchases for each product.
+  - Bar charts illustrating model performance metrics (e.g., MAE, MSE, R²).
 
 ## Results and Visuals
 
-Results can be seen from the log file in results folder.
+The results can be found in the `results/` folder, with logs detailing the aggregated purchases for 2025.
 
 ### Key Visuals
 
 1. **Regression Plots:**
-   - Compare actual vs predicted values for training, validation, and test sets.
-2. **Performance Comparison:**
-   - Bar charts illustrating improvements in metrics (MAE, MSE, R²) post-tuning.
-3. **Inventory Recommendations:**
-   - Aggregated purchase expectations for better supply chain decisions.
+   - Visualize the accuracy of XGBoost and ARIMA models for predicting Closing Stock and Purchases, respectively.
+2. **Monthly Aggregated Purchases:**
+   - Line plots showing fluctuations in aggregated purchases for each product throughout 2025.
+3. **Performance Comparison:**
+   - Bar charts highlighting improvements in MAE, MSE, and R² after model tuning.
 
 ## Folder Structure
 
@@ -104,4 +111,5 @@ For any queries or suggestions, feel free to reach out:
 - **Email:** msds24008@itu.edu.pk
 - **GitHub:** [shairbhutta](https://github.com/shairbhutta)
 
-We hope this project helps you optimize your inventory management effectively!
+We hope this project empowers you to optimize your inventory management with actionable insights and cutting-edge forecasting techniques!
+``` 
